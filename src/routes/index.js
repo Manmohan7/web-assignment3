@@ -4,6 +4,7 @@ import Services from './Services'
 import About from './About'
 import Report from './Report'
 import Login from './Login'
+import User from './User'
 
 
 const routes = [{
@@ -30,6 +31,10 @@ const routes = [{
   name: 'Login',
   path: '/login',
   element: <Login />
+}, {
+  name: 'User',
+  path: '/user',
+  element: <User />
 }]
 
 

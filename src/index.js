@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import {
@@ -6,6 +6,7 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
+import StoreContext from './StoreContext';
 
 import routes from './routes';
 
@@ -17,14 +18,15 @@ import 'bootstrap/dist/js/bootstrap';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-import ThemeContext from './ThemeContext';
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.render(
-  <React.StrictMode>
-    <ThemeContext.Provider value={'light'}>
+const Root = () => {
+  const [user, setUser] = useState(null)
+
+  return (
+    <StoreContext.Provider value={{user, setUser}}>
       <BrowserRouter>
+
         <Header />
 
         <main className='container'>
@@ -36,6 +38,12 @@ root.render(
         <Footer />
 
       </BrowserRouter>
-    </ThemeContext.Provider>
+    </StoreContext.Provider>
+  )
+}
+
+root.render(
+  <React.StrictMode>
+    <Root />
   </React.StrictMode>
 );
