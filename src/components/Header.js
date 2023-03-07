@@ -23,7 +23,7 @@ const Header = () => {
                         <NavBarItem key={path} path={path} name={<i className="bi bi-person-circle"></i>} />
                       )
                     } else if(path === '/user') {
-
+                      return null
                     } else {
                       return (<NavBarItem key={path} path={path} name={name} />)
                     }

@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import ChangeMode from "./ChangeMode";
 import CheckListItem from "./CheckListItem";
 
 const CheckList = () => {
@@ -44,8 +43,6 @@ const CheckList = () => {
           ) }
         </ul>
       </div>
-
-      <ChangeMode />
     </>
   )
 }

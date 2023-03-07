@@ -1,5 +1,4 @@
 import { useState } from "react"
-import ChangeMode from "./ChangeMode"
 
 const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
 const WEATHER_API = `https://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}&q=`
@@ -75,13 +74,13 @@ const Weather = () => {
       setTempInfo(response.main)
 
     } catch(e) {
-      console.log('error occurred')
+      console.log('error occurred', e)
     }
   }
   
   return (
     <>
-      <div className="row g2">
+      <div className="row g-2">
         <div className="col">
           <input type="text" className="form-control" value={cityName} onChange={(e) => setCityName(e.target.value)} />
         </div>
@@ -96,8 +95,6 @@ const Weather = () => {
           ? <WeatherLayout tempInfo={tempInfo} />
           : <NoCityFound />
       }
-      
-      <ChangeMode />
     </>
   )
 }
