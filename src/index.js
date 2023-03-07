@@ -14,6 +14,7 @@ import routes from './routes';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@popperjs/core'
 import 'bootstrap/dist/js/bootstrap';
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 import Header from './components/Header';
 import Footer from './components/Footer';

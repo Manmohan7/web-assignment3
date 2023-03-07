@@ -16,9 +16,18 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               {
-                routes.map(({path, name}) => (
-                  <NavBarItem key={path} path={path} name={name} />
-                ))
+                routes
+                  .map(({path, name}) => {
+                    if(path === '/login') {
+                      return (
+                        <NavBarItem key={path} path={path} name={<i className="bi bi-person-circle"></i>} />
+                      )
+                    } else if(path === '/user') {
+
+                    } else {
+                      return (<NavBarItem key={path} path={path} name={name} />)
+                    }
+                  })
               }
             </ul>
           </div>

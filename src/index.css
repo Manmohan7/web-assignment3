@@ -11,5 +11,10 @@
 }
 
 .footer {
-  min-height: 200px;
+  min-height: 100px;
+}
+
+.show-modal {
+  display: block !important;
+  background-color: #80808080;
 }
