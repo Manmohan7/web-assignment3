@@ -1,6 +1,4 @@
-import {
-  StyleSheet,
-} from 'react-native';
+
 const Footer = () => {
   return (
     <footer className="mt-5" style={styles.container}>
@@ -21,13 +19,14 @@ const Footer = () => {
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
+const styles = {
+  ontainer: {
     backgroundColor: '#0d6efd',
     color: '#fff',
     width: '100%',
-    bottom: 0
+    bottom: 0,
   },
-})
+};
+
 
 export default Footer

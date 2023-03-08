@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom"
 import routes from "../routes"
 import NavBarItem from "./NavBarItem"
-import {
-  StyleSheet,
-} from 'react-native';
 
 const Header = () => {
   return (
@@ -39,13 +36,14 @@ const Header = () => {
     </header>
   )
 }
-const styles = StyleSheet.create({
+
+
+const styles = {
   container: {
     backgroundColor: '#0d6efd',
   },
   navbaritem: {
     color: '#fff',
   },
-
-})
+};
 export default Header
