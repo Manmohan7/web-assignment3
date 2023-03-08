@@ -16,6 +16,7 @@ const Report = () => {
             <li>Footer</li>
             <li>CheckList Tool</li>
             <li>Weather Tool</li>
+            <li>Calculator Tool</li>
           </ul>
         </div>
       </section>
@@ -23,7 +24,7 @@ const Report = () => {
       <section className="row flex-column mt-4">
         <div className="col">
           <h2 className="fs-2">Research Done</h2>
-          <p>I used various online resources to read more about react hooks and examples to appropriately implement them in the application.</p>
+          <p>We used various online resources to read more about react hooks and examples to appropriately implement them in the application. Furthermore, we researched events, props, and how to make components from the W3Schools website. </p>
         </div>
       </section>
 
@@ -36,8 +37,8 @@ const Report = () => {
 
       <section className="row flex-column mt-4">
         <div className="col">
-          <h2 className="fs-2">Getsalt Principle Used</h2>
-          <p>I have used the continuation and similarity principle which can be noticed in all the pages having similar layout style.</p>
+          <h2 className="fs-2">Getsalt Principles Used</h2>
+          <p>We have used the continuation, proximity and similarity principles which can be noticed in all the pages having similar layout style and components that are physically close to each other are often related and may interact with each other.</p>
         </div>
       </section>
 
