@@ -20,7 +20,7 @@ const Footer = () => {
 }
 
 const styles = {
-  ontainer: {
+  container: {
     backgroundColor: '#0d6efd',
     color: '#fff',
     width: '100%',
