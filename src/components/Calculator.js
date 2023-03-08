@@ -1,111 +1,74 @@
-import React from 'react';
-import {
-    View,
-    TextInput,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-} from 'react-native';
+import { useState } from 'react';
 
-export default class Calculator extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value1: 0,
-            value2: 0,
-            result: 0,
-            operator: '+',
-        };
-    }
+function Calculator() {
+    const [value1, setValue1] = useState(0);
+    const [value2, setValue2] = useState(0);
+    const [result, setResult] = useState(0);
+    const [operator, setOperator] = useState('+');
 
-    setOperator = (operator) => {
-        this.setState({
-            operator,
-        });
-    };
-
-    calculateResult = () => {
-        const { value1, value2, operator } = this.state;
-        let result;
+    const calculateResult = () => {
+        let calculatedResult;
         if (operator === '+') {
-            result = value1 + value2;
+            calculatedResult = value1 + value2;
         } else if (operator === '-') {
-            result = value1 - value2;
+            calculatedResult = value1 - value2;
         } else if (operator === '*') {
-            result = value1 * value2;
+            calculatedResult = value1 * value2;
         } else if (operator === '/') {
-            result = value1 / value2;
+            calculatedResult = value1 / value2;
         }
-        this.setState({
-            result,
-        });
+        setResult(calculatedResult);
     };
 
-    clearResult = () => {
-        this.setState({
-            result: 0,
-        });
+    const clearResult = () => {
+        setResult(0);
     };
 
-    render() {
-        return (
-            <View style={styles.container}>
-                <TextInput
-                    style={styles.input}
-                    keyboardType="numeric"
-                    placeholder="Enter a number"
-                    onChangeText={text => this.setState({ value1: Number(text) })}
-                />
-                <TextInput
-                    style={styles.input}
-                    keyboardType="numeric"
-                    placeholder="Enter another number"
-                    onChangeText={text => this.setState({ value2: Number(text) })}
-                />
-                <View style={styles.operatorContainer}>
-                    <TouchableOpacity
-                        style={styles.operatorButton}
-                        onPress={() => this.setOperator('+')}
-                    >
-                        <Text style={styles.operatorText}>+</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style={styles.operatorButton}
-                        onPress={() => this.setOperator('-')}
-                    >
-                        <Text style={styles.operatorText}>-</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style={styles.operatorButton}
-                        onPress={() => this.setOperator('*')}
-                    >
-                        <Text style={styles.operatorText}>*</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style={styles.operatorButton}
-                        onPress={() => this.setOperator('/')}
-                    >
-                        <Text style={styles.operatorText}>/</Text>
-                    </TouchableOpacity>
-                </View>
-                <TouchableOpacity style={styles.button} onPress={this.calculateResult}>
-                    <Text style={styles.buttonText}>Calculate</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button} onPress={this.clearResult}>
-                    <Text style={styles.buttonText}>Clear</Text>
-                </TouchableOpacity>
-                <Text style={styles.resultText}>Result: {this.state.result}</Text>
-            </View>
-        );
-    }
+    return (
+        <div style={styles.container}>
+            <input
+                style={styles.input}
+                type="number"
+                placeholder="Enter a number"
+                value={value1}
+                onChange={(e) => setValue1(Number(e.target.value))}
+            />
+            <input
+                style={styles.input}
+                type="number"
+                placeholder="Enter another number"
+                value={value2}
+                onChange={(e) => setValue2(Number(e.target.value))}
+            />
+            <div style={styles.operatorContainer}>
+                <button style={styles.operatorButton} onClick={() => setOperator('+')}>
+                    <span style={styles.operatorText}>+</span>
+                </button>
+                <button style={styles.operatorButton} onClick={() => setOperator('-')}>
+                    <span style={styles.operatorText}>-</span>
+                </button>
+                <button style={styles.operatorButton} onClick={() => setOperator('*')}>
+                    <span style={styles.operatorText}>X</span>
+                </button>
+                <button style={styles.operatorButton} onClick={() => setOperator('/')}>
+                    <span style={styles.operatorText}>/</span>
+                </button>
+            </div>
+            <button style={styles.button} onClick={calculateResult}>
+                <span style={styles.buttonText}>Calculate</span>
+            </button>
+            <button style={styles.button} onClick={clearResult}>
+                <span style={styles.buttonText}>Clear</span>
+            </button>
+            <p style={styles.resultText}>Result: {result}</p>
+        </div>
+    );
 }
 
-const styles = StyleSheet.create({
+const styles = {
     container: {
-        flex: 1,
         backgroundColor: '#fff',
-        alignItems: 'left',
-        justifyContent: 'left',
+        textAlign: 'left',
     },
     input: {
         width: 200,
@@ -117,6 +80,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
     },
     operatorContainer: {
+        display: 'flex',
         flexDirection: 'row',
         width: 200,
         margin: 10,
@@ -125,7 +89,8 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#0d6efd',
         padding: 10,
-        margin: 10,
+        margin: 5,
+        borderWidth: 0
     },
     operatorText: {
         fontSize: 14,
@@ -137,6 +102,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#0d6efd',
         padding: 10,
         margin: 10,
+        borderWidth: 0
     },
     buttonText: {
         fontSize: 14,
@@ -149,4 +115,6 @@ const styles = StyleSheet.create({
         textAlign: 'left',
         margin: 7,
     },
-});
+};
+
+export default Calculator
