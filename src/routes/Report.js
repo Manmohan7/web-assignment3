@@ -7,7 +7,6 @@ const Report = () => {
         </div>
       </div>
 
-
       <section className="row flex-column mt-4">
         <div className="col">
           <h2 className="fs-2">Functional Components Used</h2>
@@ -30,8 +29,8 @@ const Report = () => {
 
       <section className="row flex-column mt-4">
         <div className="col">
-          <h2 className="fs-2">Media Query Used</h2>
-          <p>Since bootstrap makes everything responsive by default, I have only used a media query to change the background image on the home page.</p>
+          <h2 className="fs-2">Color Pallete</h2>
+          <p>To keep things minimalistic, we have used only 2 colors - white and blue. Gives the whole website a cleaner look and feel.</p>
         </div>
       </section>
 
@@ -46,12 +45,31 @@ const Report = () => {
         <div className="col">
           <h2 className="fs-2">Hooks Used</h2>
           <ol>
-            <li>useState - Weather Tool</li>
-            <li>useContext - Change Mode on Tools page</li>
-            <li>useRef - Checklist Tool</li>
-            <li>useEffect - Checklist Tool</li>
-            <li>useCallback - Checklist Tool</li>
+            <li>useCallback - Checklist Tool (to add new items to the list)</li>
+            <li>useContext - Gloabl (to store if user is logged in or not)</li>
+            <li>useEffect - News API (to fetch the news from API when the component is loaded)</li>
+            <li>useRef - Checklist Tool (to update the number of elements in the list)</li>
+            <li>useState - Weather Tool (to store the name of the location)</li>
           </ol>
+        </div>
+      </section>
+
+      <section className="row flex-column mt-4">
+        <div className="col">
+          <h2 className="fs-2">APIs Used</h2>
+          <p>We have used 3 different APIs - </p>
+          <ol>
+            <li>News - https://newsapi.org</li>
+            <li>Weather - https://openweathermap.org</li>
+            <li>Random Fox Image - https://randomfox.ca</li>
+          </ol>
+        </div>
+      </section>
+
+      <section className="row flex-column mt-4">
+        <div className="col">
+          <h2 className="fs-2">Participation Report</h2>
+          <p>Both members contributed equally in the development. Manmohan worked on authentication, News API and Random Fox Image. Isha worked on Checklist Tool, Calculator Tool, Weather API.</p>
         </div>
       </section>
     </>
